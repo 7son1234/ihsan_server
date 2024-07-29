@@ -49,7 +49,7 @@ app.post('/whatsMyName', (req, res) => {
 
 });
 
-app.get('/app', (req,res)=>{
+app.get('/', (req,res)=>{
     res.status(200).json({
         name:'live'
     })
