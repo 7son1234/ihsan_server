@@ -49,6 +49,12 @@ app.post('/whatsMyName', (req, res) => {
 
 });
 
+app.get('/app', (req,res)=>{
+    res.status(200).json({
+        name:'live'
+    })
+})
+
 
 
  app.use(Routes)
