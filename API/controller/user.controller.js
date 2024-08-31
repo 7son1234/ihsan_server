@@ -4,7 +4,7 @@ const createNewUser = (req, res) => {
     const { name, phone, pass, age, id } = req.body;
 
     USER_MODEL.create({
-        name: name,
+        name: name, 
         phone: phone,
         pass: pass,
         age: age,

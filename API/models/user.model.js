@@ -7,17 +7,20 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  pass:{
+  pass: {
     type: String,
     required: true,
   },
-  id:{
-    type:Number,
-    unique:true,
+  id: {
+    type: Number,
+    unique: true,
     required: true,
+  },
+  cart: {
+    type: Array,
   }
 });
 
 const USER_MODEL = model("user", userSchema);
 
-module.exports=USER_MODEL;
+module.exports = USER_MODEL;

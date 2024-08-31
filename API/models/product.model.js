@@ -13,8 +13,11 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
+  img:{
+    type:String
+  },
   id:{
-    type:Number,
+    type:String,
     unique:true,
     required: true,
   } 
