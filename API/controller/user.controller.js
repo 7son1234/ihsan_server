@@ -9,8 +9,7 @@ const createNewUser = (req, res) => {
         pass: pass,
         age: age,
         id:id
-    })
-        .then((createRes) => {
+    }).then((createRes) => {
             res.status(200).json({ user: createRes._doc });
         })
         .catch((e) =>
