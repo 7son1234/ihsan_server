@@ -4,14 +4,14 @@ const createNewUser = (req, res) => {
     const { name, phone, pass, age, id } = req.body;
 
     USER_MODEL.create({
-        name: name, 
+        name: name,
         phone: phone,
         pass: pass,
         age: age,
-        id:id
+        id: id
     }).then((createRes) => {
-            res.status(200).json({ user: createRes._doc });
-        })
+        res.status(200).json({ user: createRes._doc });
+    })
         .catch((e) =>
             res.status(500).json({ error: true, errorMassage: e.massage })
         );
@@ -37,8 +37,29 @@ const login = async (req, res) => {
     }
 
 
+
+}
+const updateCart = async (req, res) => {
+    try {
+        const { phone, updateCart } = req.body
+        const user = await USER_MODEL.findOneAndUpdate(
+            { phone: phone },
+            { cart: updateCart },
+            { new: true, runValidators: true }
+        );
+        res.status(200).json({
+            user:user
+        })
+    }
+    catch (error) {
+        res.status(500).json({
+            error: true,
+            errorMassage: error.massage,
+        })
+    }
 }
 module.exports = {
     createNewUser,
     login,
+    updateCart
 }
